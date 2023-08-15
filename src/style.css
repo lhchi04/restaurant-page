@@ -1,0 +1,135 @@
+@font-face {
+  font-family: sile;
+  src: url('Sile.ttf');
+}
+
+body {
+  background-image: url('./images/wallpaper.png');
+  background-color: rgba(255, 140, 0, 0.576);
+  background-blend-mode: multiply;
+  background-size: 100%;
+  font-family: sile;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  min-width: 300px;
+  margin: 50px;
+}
+button {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgb(77, 12, 12);
+  font-family: inherit;
+  font-size: 50px;
+  position: relative;
+  cursor: pointer;
+}
+button::after {
+  content: '';
+  position: absolute;
+  height: 5px;
+  bottom: 0;
+  left: 50%;
+  transform: scaleX(0);
+  background: rgb(77, 12, 12);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+button:hover::after, button:focus::after {
+  width: 100%;
+  left: 0;
+  transform: scaleX(1);
+}
+
+.text-container {
+  background-color: rgba(250, 235, 215, 0.8);
+  width: clamp(300px, 80%, 1000px);
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-size: 70px;
+  font-weight: lighter;
+  color: rgb(120, 26, 26);
+}
+.title {
+  background-color: rgba(165, 42, 42, 0.9);
+  color: antiquewhite;
+}
+h2 {
+  font-size: 50px;
+}
+h4 {
+  color: brown;
+  margin: 0;
+}
+
+.menu-main, .menu-special, .menu-breakfast, .menu-snack {
+  background-color: rgba(250, 235, 215, 0.9);
+  margin: auto;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.3fr));
+  margin: 20px;
+  padding: 10px;
+  height: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+.menu-special {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.25fr));
+}
+.menu-main img, .menu-special img, .menu-other img {
+  height: 150px;
+}
+.menu-other {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 0.5fr));
+  justify-content: center;
+}
+.menu-breakfast, .menu-snack {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+  height: auto;
+}
+.food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(223, 122, 6);
+  font-size: 30px;
+}
+.food:hover {
+  transform: scale(1.1);
+  transition: transform 250ms;
+  cursor: pointer;
+}
+
+.contact-container {
+  margin: auto;
+  display: flex;
+  width: clamp(400px, 50%, 1000px);
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(250, 235, 215, 0.9);
+  border-radius: 20px;
+  color: black;
+}
+.contact-container img {
+  width: clamp(320px, 70%, 1000px);
+  transition: transform 400ms;
+}
+.contact-container img:hover {
+  transform: scale(1.1);
+  transition: transform 250ms;
+}
+.contact-container h3 {
+  font-size: 45px;
+}
